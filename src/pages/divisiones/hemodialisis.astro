@@ -1,0 +1,49 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DivisionHeader from '../../components/divisions/DivisionHeader.astro';
+import ProductList from '../../components/divisions/ProductList.astro';
+import QuoteForm from '../../components/products/QuoteForm.astro';
+
+const products = [
+  {
+    name: 'Máquinas de Hemodiálisis',
+    description: 'Equipos de última generación para tratamientos de diálisis',
+    features: [
+      'Monitoreo en tiempo real',
+      'Sistema de ultrafiltración preciso',
+      'Interfaz intuitiva'
+    ],
+    image: '/images/products/hemodialysis-machine.jpg'
+  },
+  {
+    name: 'Sistemas de Tratamiento de Agua',
+    description: 'Sistemas completos para purificación de agua',
+    features: [
+      'Ósmosis inversa',
+      'Control automático',
+      'Monitoreo de calidad'
+    ],
+    image: '/images/products/water-treatment.jpg'
+  }
+];
+
+const divisionInfo = {
+  title: 'Hemodiálisis',
+  description: 'Tecnología avanzada para tratamientos de diálisis',
+  image: '/images/divisions/hemodialysis.jpg',
+  content: `
+    Nuestra división de Hemodiálisis proporciona soluciones completas para centros de diálisis, 
+    incluyendo equipamiento de última generación y todos los insumos necesarios para garantizar 
+    tratamientos seguros y efectivos.
+  `
+};
+---
+
+<Layout 
+  title={divisionInfo.title}
+  description="División de Hemodiálisis de LatinMed - Equipamiento y soluciones completas para tratamientos de diálisis"
+>
+  <DivisionHeader {...divisionInfo} />
+  <ProductList products={products} />
+  <QuoteForm />
+</Layout>

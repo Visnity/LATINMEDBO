@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DivisionCard from '../../components/divisions/DivisionCard.astro';
+
+const divisions = [
+  {
+    title: 'Nefrología',
+    image: '/images/divisions/nephrology.jpg',
+    description: 'Soluciones completas para el cuidado renal',
+    link: '/divisiones/nefrologia'
+  },
+  {
+    title: 'Hemodiálisis',
+    image: '/images/divisions/hemodialysis.jpg',
+    description: 'Equipamiento y productos para tratamientos de diálisis',
+    link: '/divisiones/hemodialisis'
+  },
+  {
+    title: 'Nutrición Clínica',
+    image: '/images/divisions/nutrition.jpg',
+    description: 'Soluciones nutricionales especializadas',
+    link: '/divisiones/nutricion'
+  },
+  {
+    title: 'Dermatología',
+    image: '/images/divisions/dermatology.jpg',
+    description: 'Productos para el cuidado de la piel',
+    link: '/divisiones/dermatologia'
+  },
+  {
+    title: 'Hemoterapia',
+    image: '/images/divisions/hemotherapy.jpg',
+    description: 'Productos para transfusiones sanguíneas',
+    link: '/divisiones/hemoterapia'
+  },
+  {
+    title: 'Catéteres de Acceso Vascular',
+    image: '/images/divisions/catheters.jpg',
+    description: 'Dispositivos de acceso vascular de alta calidad',
+    link: '/divisiones/cateteres'
+  }
+];
+---
+
+<Layout 
+  title="Divisiones Médicas"
+  description="Explore nuestras divisiones médicas especializadas"
+>
+  <div class="pt-20 pb-16">
+    <div class="container mx-auto px-4">
+      <h1 class="text-4xl font-bold text-gray-900 mb-8 text-center">Divisiones Médicas</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {divisions.map(division => (
+          <DivisionCard {...division} />
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

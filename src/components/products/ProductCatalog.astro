@@ -1,0 +1,72 @@
+---
+const categories = [
+  {
+    name: 'Nefrología',
+    products: [
+      {
+        name: 'Hemose',
+        description: 'Línea completa de productos para hemodiálisis',
+        image: '/images/products/hemose.jpg'
+      },
+      {
+        name: 'Med Cath',
+        description: 'Catéteres especializados para diálisis',
+        image: '/images/products/medcath.jpg'
+      }
+    ]
+  },
+  {
+    name: 'Hemoterapia',
+    products: [
+      {
+        name: 'Latin Med Hemoterapia',
+        description: 'Soluciones para transfusiones sanguíneas',
+        image: '/images/products/hemotherapy.jpg'
+      }
+    ]
+  },
+  {
+    name: 'Nutrición',
+    products: [
+      {
+        name: 'Fixned-na',
+        description: 'Suplementos nutricionales especializados',
+        image: '/images/products/fixned.jpg'
+      }
+    ]
+  }
+];
+---
+
+<section class="py-16">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">Nuestros Productos</h2>
+    
+    {categories.map(category => (
+      <div class="mb-16">
+        <h3 class="text-2xl font-semibold mb-6 text-primary">{category.name}</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {category.products.map(product => (
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <img
+                src={product.image}
+                alt={product.name}
+                class="w-full h-48 object-cover"
+              />
+              <div class="p-6">
+                <h4 class="text-xl font-semibold mb-2">{product.name}</h4>
+                <p class="text-gray-600 mb-4">{product.description}</p>
+                <button
+                  class="bg-secondary hover:bg-secondary-dark text-white px-4 py-2 rounded-md transition-colors"
+                  onclick="document.querySelector('#quote-form').scrollIntoView({behavior: 'smooth'})"
+                >
+                  Solicitar Cotización
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

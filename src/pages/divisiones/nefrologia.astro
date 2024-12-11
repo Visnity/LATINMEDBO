@@ -1,0 +1,48 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DivisionHeader from '../../components/divisions/DivisionHeader.astro';
+import ProductList from '../../components/divisions/ProductList.astro';
+import QuoteForm from '../../components/products/QuoteForm.astro';
+
+const products = [
+  {
+    name: 'Hemose',
+    description: 'Línea completa de productos para hemodiálisis',
+    features: [
+      'Filtros de alta eficiencia',
+      'Líneas arteriovenosas',
+      'Soluciones de diálisis'
+    ],
+    image: '/images/products/hemose.jpg'
+  },
+  {
+    name: 'Med Cath',
+    description: 'Catéteres especializados para diálisis',
+    features: [
+      'Catéteres de doble lumen',
+      'Sistema de fijación seguro',
+      'Material biocompatible'
+    ],
+    image: '/images/products/medcath.jpg'
+  }
+];
+
+const divisionInfo = {
+  title: 'Nefrología',
+  description: 'Soluciones integrales para el cuidado renal',
+  image: '/images/divisions/nephrology.jpg',
+  content: `
+    Nuestra división de Nefrología ofrece productos y soluciones de alta calidad para el tratamiento de enfermedades renales. 
+    Contamos con un equipo especializado y productos certificados internacionalmente para garantizar los mejores resultados en el tratamiento de pacientes.
+  `
+};
+---
+
+<Layout 
+  title={divisionInfo.title}
+  description="División de Nefrología de LatinMed - Soluciones integrales para el cuidado renal"
+>
+  <DivisionHeader {...divisionInfo} />
+  <ProductList products={products} />
+  <QuoteForm />
+</Layout>

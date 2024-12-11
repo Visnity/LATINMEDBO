@@ -1,0 +1,55 @@
+---
+interface Feature {
+  name: string;
+  description: string;
+  features: string[];
+  image: string;
+}
+
+interface Props {
+  products: Feature[];
+}
+
+const { products } = Astro.props;
+---
+
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">Nuestros Productos</h2>
+    
+    <div class="space-y-12">
+      {products.map((product, index) => (
+        <div class={`flex flex-col md:flex-row gap-8 items-center ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+          <div class="md:w-1/2">
+            <img
+              src={product.image}
+              alt={product.name}
+              class="rounded-lg shadow-md w-full h-[300px] object-cover"
+            />
+          </div>
+          <div class="md:w-1/2">
+            <h3 class="text-2xl font-bold text-primary mb-4">{product.name}</h3>
+            <p class="text-gray-700 mb-6">{product.description}</p>
+            <h4 class="text-lg font-semibold text-gray-900 mb-3">Características:</h4>
+            <ul class="space-y-2">
+              {product.features.map(feature => (
+                <li class="flex items-center text-gray-700">
+                  <svg class="w-5 h-5 text-secondary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            <button
+              class="mt-6 bg-secondary hover:bg-secondary-dark text-white px-6 py-2 rounded-md transition-colors"
+              onclick="document.querySelector('#quote-form').scrollIntoView({behavior: 'smooth'})"
+            >
+              Solicitar Cotización
+            </button>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

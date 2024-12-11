@@ -1,0 +1,49 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DivisionHeader from '../../components/divisions/DivisionHeader.astro';
+import ProductList from '../../components/divisions/ProductList.astro';
+import QuoteForm from '../../components/products/QuoteForm.astro';
+
+const products = [
+  {
+    name: 'Fixned-na',
+    description: 'Suplementos nutricionales especializados',
+    features: [
+      'Fórmulas balanceadas',
+      'Alta biodisponibilidad',
+      'Diferentes presentaciones'
+    ],
+    image: '/images/products/fixned.jpg'
+  },
+  {
+    name: 'Nutrición Enteral',
+    description: 'Soluciones completas para nutrición enteral',
+    features: [
+      'Fórmulas específicas por patología',
+      'Sistema de administración seguro',
+      'Opciones modulares'
+    ],
+    image: '/images/products/enteral-nutrition.jpg'
+  }
+];
+
+const divisionInfo = {
+  title: 'Nutrición Clínica',
+  description: 'Soluciones nutricionales especializadas para cada necesidad',
+  image: '/images/divisions/nutrition.jpg',
+  content: `
+    La división de Nutrición Clínica de LatinMed ofrece una amplia gama de productos 
+    nutricionales especializados, diseñados para satisfacer las necesidades específicas 
+    de cada paciente, garantizando una óptima nutrición y recuperación.
+  `
+};
+---
+
+<Layout 
+  title={divisionInfo.title}
+  description="División de Nutrición Clínica de LatinMed - Soluciones nutricionales especializadas"
+>
+  <DivisionHeader {...divisionInfo} />
+  <ProductList products={products} />
+  <QuoteForm />
+</Layout>

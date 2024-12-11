@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/contact/ContactForm.astro';
+import LocationMap from '../components/contact/LocationMap.astro';
+import BranchOffices from '../components/contact/BranchOffices.astro';
+
+---
+
+<Layout 
+  title="Contacto"
+  description="Contáctese con LatinMed - Encuentre nuestras sucursales y información de contacto"
+>
+  <div class="pt-20">
+    <ContactForm />
+    <BranchOffices />
+    <LocationMap />
+  </div>
+</Layout>

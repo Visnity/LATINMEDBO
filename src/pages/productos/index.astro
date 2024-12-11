@@ -1,0 +1,16 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ProductCatalog from '../../components/products/ProductCatalog.astro';
+import QuoteForm from '../../components/products/QuoteForm.astro';
+
+---
+
+<Layout 
+  title="Productos"
+  description="Catálogo completo de productos farmacéuticos y médicos de LatinMed"
+>
+  <div class="pt-20">
+    <ProductCatalog />
+    <QuoteForm />
+  </div>
+</Layout>
